@@ -80,7 +80,7 @@ nav a{
     font-weight:500;
 }
 
-/* HAMBURGER (OCULTO NO DESKTOP) */
+/* HAMBURGER */
 .menu-toggle{
     display:none;
     position:absolute;
@@ -155,7 +155,7 @@ footer{
 }
 
 /* =========================
-   MOBILE MENU
+   MOBILE FIX FINAL
 ========================= */
 @media(max-width:768px){
 
@@ -173,33 +173,35 @@ footer{
         font-size:16px;
     }
 
-    /* NAV MOBILE */
+    /* 🔥 BARRA MAIS ALTA */
     nav{
+        padding:22px 10px;
         justify-content:flex-start;
-        padding:14px 10px;
     }
 
+    /* LOGO */
     .nav-left img{
         width:75px;
         padding:4px;
     }
 
-    /* HAMBURGER VISÍVEL */
+    /* 🔥 BOTÃO MAIS À ESQUERDA */
     .menu-toggle{
         display:block;
+        right:12px;
+        font-size:30px;
     }
 
-    /* MENU FECHADO POR DEFAULT */
+    /* MENU MOBILE */
     .nav-center{
         display:none;
         flex-direction:column;
         width:100%;
-        margin-top:60px;
+        margin-top:70px;
         text-align:center;
         gap:12px;
     }
 
-    /* MENU ABERTO */
     .nav-center.active{
         display:flex;
     }
@@ -246,11 +248,11 @@ footer{
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <div class="nav-center" id="menu">
-        <a href="#produto">Produto</a>
-        <a href="#vantagens">Vantagens</a>
-        <a href="#funcionamento">Funcionamento</a>
-        <a href="#composicao">Composição</a>
-        <a href="#rotulo">Rótulo</a>
+        <a href="#produto" onclick="closeMenu()">Produto</a>
+        <a href="#vantagens" onclick="closeMenu()">Vantagens</a>
+        <a href="#funcionamento" onclick="closeMenu()">Funcionamento</a>
+        <a href="#composicao" onclick="closeMenu()">Composição</a>
+        <a href="#rotulo" onclick="closeMenu()">Rótulo</a>
     </div>
 
 </nav>
@@ -312,6 +314,10 @@ EcoRoot™ | Projeto académico – Solução sustentável para viveiros florest
 <script>
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("active");
+}
+
+function closeMenu(){
+    document.getElementById("menu").classList.remove("active");
 }
 </script>
 
