@@ -57,7 +57,7 @@ nav{
 
 .nav-left{
     position:absolute;
-    left:20px;
+    left:12px; /* 🔥 mais para a esquerda */
 }
 
 .nav-left img{
@@ -85,7 +85,7 @@ nav a{
 .menu-btn{
     display:none;
     position:absolute;
-    right:22px; /* 🔥 CORRIGIDO (menos para a esquerda) */
+    right:12px; /* 🔥 mais para a direita */
     font-size:36px;
     color:white;
     cursor:pointer;
@@ -141,10 +141,10 @@ h2{
     margin-bottom:12px;
 }
 
-/* 🔥 VANTAGENS (DESKTOP MANTIDO) */
+/* 🔥 VANTAGENS AGORA SEMPRE EM COLUNA */
 .grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr; /* 💥 mudou aqui */
     gap:15px;
 }
 
@@ -206,11 +206,6 @@ footer{
 
     .menu-btn.open{
         transform:rotate(180deg);
-    }
-
-    /* 🔥 VANTAGENS EM COLUNA ÚNICA */
-    .grid{
-        grid-template-columns:1fr;
     }
 }
 
