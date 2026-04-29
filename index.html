@@ -43,9 +43,7 @@ nav{
     top:0;
     width:100%;
     background:rgba(0,0,0,0.85);
-
     padding:16px 20px;
-
     z-index:1000;
     backdrop-filter: blur(10px);
 
@@ -81,6 +79,37 @@ nav a{
     text-decoration:none;
     font-size:16px;
     font-weight:500;
+}
+
+/* BOTÃO MENU (mobile) */
+.menu-btn{
+    display:none;
+    position:absolute;
+    right:20px;
+    font-size:26px;
+    color:white;
+    cursor:pointer;
+}
+
+/* MENU MOBILE DROPDOWN */
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:rgba(0,0,0,0.95);
+    position:fixed;
+    top:70px; /* logo abaixo da barra */
+    left:0;
+    width:100%;
+    padding:10px 0;
+    z-index:999;
+    text-align:center;
+}
+
+.mobile-menu a{
+    color:white;
+    padding:12px;
+    text-decoration:none;
+    font-size:14px;
 }
 
 /* CONTAINER */
@@ -147,17 +176,8 @@ footer{
     opacity:0.95;
 }
 
-/* =========================
-   MOBILE MENU (NOVO)
-========================= */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
-
-    .hero{
-        background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-        url('Fundo-mobile.jpg');
-        height:90vh;
-        padding:20px;
-    }
 
     .hero h1{
         font-size:42px;
@@ -169,12 +189,8 @@ footer{
     }
 
     nav{
-        padding:14px 10px;
         justify-content:flex-end;
-    }
-
-    .nav-left{
-        left:10px;
+        padding:14px 10px;
     }
 
     .nav-left img{
@@ -182,20 +198,16 @@ footer{
         padding:4px;
     }
 
-    /* 🔥 MENU MOBILE NOVO */
     .nav-center{
-        display:grid;
-        grid-template-columns:repeat(3, 1fr);
-        gap:6px;
-        text-align:center;
-        width:100%;
-        margin-top:5px;
+        display:none; /* esconde menu normal */
     }
 
-    nav a{
-        font-size:11px;
-        padding:4px 2px;
-        display:block;
+    .menu-btn{
+        display:block; /* mostra botão */
+    }
+
+    .mobile-menu.active{
+        display:flex; /* abre menu */
     }
 
     .card{
@@ -240,7 +252,18 @@ footer{
         <a href="#rotulo">Rótulo</a>
     </div>
 
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
 </nav>
+
+<!-- MENU MOBILE -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#produto" onclick="toggleMenu()">Produto</a>
+    <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
+    <a href="#funcionamento" onclick="toggleMenu()">Funcionamento</a>
+    <a href="#composicao" onclick="toggleMenu()">Composição</a>
+    <a href="#rotulo" onclick="toggleMenu()">Rótulo</a>
+</div>
 
 <section class="hero">
     <div>
@@ -253,20 +276,11 @@ footer{
 
 <div class="card" id="produto">
 <h2>O Produto</h2>
-
-<p>
-O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
-</p>
-
-<p>
-Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
-</p>
-
+<p>O EcoRoot consiste numa cuvete biodegradável...</p>
 </div>
 
 <div class="card" id="vantagens">
 <h2>Principais Vantagens</h2>
-
 <div class="grid">
 <div class="feature">🌱 Redução do impacto ambiental associado ao plástico</div>
 <div class="feature">🌿 Menor stress radicular durante o transplante</div>
@@ -275,48 +289,22 @@ Produzido a partir de biopolímeros de origem renovável e fibras naturais, o ma
 <div class="feature">🌾 Maior eficiência na utilização de fertilizantes</div>
 <div class="feature">⚙️ Integra suporte estrutural + nutrição</div>
 </div>
-
 </div>
 
 <div class="card" id="funcionamento">
 <h2>Como Funciona</h2>
-
-<p>
-A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da humidade e da degradação do material biodegradável.
-</p>
-
-<p>
-A estrutura porosa facilita a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.
-</p>
-
+<p>A cuvete integra nutrientes essenciais...</p>
 </div>
 
 <div class="card" id="composicao">
 <h2>Composição</h2>
-
-<p>
-O EcoRoot é composto por uma matriz de amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
-</p>
-
-<p>
-O amido garante biodegradabilidade, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural.
-</p>
-
-<p>
-A incorporação de nutrientes transforma a cuvete num sistema ativo de suporte ao crescimento vegetal.
-</p>
-
+<p>O EcoRoot é composto por...</p>
 </div>
 
 <div class="card" id="rotulo">
 <h2>Rótulo do Produto</h2>
-
-<p>
-O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
-</p>
-
+<p>O rótulo inclui informação técnica...</p>
 <img src="Rotulo.jpg">
-
 </div>
 
 </section>
@@ -324,6 +312,12 @@ O rótulo inclui informação técnica como composição, instruções de utiliz
 <footer>
 EcoRoot™ | Projeto académico – Solução sustentável para viveiros florestais
 </footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("mobileMenu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
