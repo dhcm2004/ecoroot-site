@@ -62,6 +62,7 @@ nav{
 
 .nav-left img{
     width:105px;
+    height:auto;
     background:white;
     padding:5px;
     border-radius:6px;
@@ -181,8 +182,13 @@ footer{
 @media(max-width:768px){
 
     nav{
-        padding:28px 10px; /* 🔥 AUMENTEI UM POUCO A BARRA */
+        padding:28px 10px;
         justify-content:flex-end;
+    }
+
+    /* 📱 LOGO MAIS PARA CIMA */
+    .nav-left{
+        top:6px;
     }
 
     .nav-left img{
@@ -193,8 +199,10 @@ footer{
         display:none;
     }
 
+    /* 📱 BOTÃO MENU MAIS PARA A ESQUERDA */
     .menu-btn{
         display:block;
+        right:12px; /* antes: 20px */
     }
 
     .menu-btn.open{
