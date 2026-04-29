@@ -63,7 +63,6 @@ nav{
 .nav-left img{
     width:105px;
     height:auto;
-    object-fit:contain;
     background:white;
     padding:5px;
     border-radius:6px;
@@ -82,7 +81,7 @@ nav a{
     font-weight:500;
 }
 
-/* BOTÃO MENU */
+/* MENU BUTTON */
 .menu-btn{
     display:none;
     position:absolute;
@@ -92,7 +91,7 @@ nav a{
     cursor:pointer;
 }
 
-/* MENU MOBILE */
+/* MOBILE MENU */
 .mobile-menu{
     display:none;
     flex-direction:column;
@@ -104,7 +103,7 @@ nav a{
     z-index:999;
 }
 
-/* CONTEÚDO */
+/* CONTENT */
 .container{
     background:#f9fafb;
     padding:60px 20px;
@@ -166,14 +165,14 @@ footer{
 /* ================= MOBILE ================= */
 @media(max-width:768px){
 
-    /* 🔥 BARRA MAIS ALTA NO MOBILE */
+    /* 🔥 BARRA MAIS ALTA (AGORA MAIS NOTÁVEL) */
     nav{
-        padding:26px 10px; /* AUMENTADA */
+        padding:34px 10px;
         justify-content:flex-end;
     }
 
     .nav-left img{
-        width:90px;
+        width:95px;
     }
 
     .nav-center{
@@ -184,9 +183,14 @@ footer{
         display:block;
     }
 
-    /* 🔥 MENU ABRE LOGO ABAIXO DA BARRA NOVA */
+    /* 🔥 ALTURA REAL DA BARRA CONTROLADA */
+    :root{
+        --mobile-nav-height: 92px;
+    }
+
+    /* 🔥 MENU COMEÇA EXATAMENTE ONDE A BARRA ACABA */
     .mobile-menu{
-        top:78px; /* ajustado à nova altura da barra */
+        top: var(--mobile-nav-height);
     }
 
     .mobile-menu.active{
@@ -276,7 +280,7 @@ footer{
 </section>
 
 <section class="container">
-<!-- teu conteúdo 그대로 -->
+<!-- conteúdo igual -->
 </section>
 
 <footer>
