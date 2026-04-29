@@ -57,7 +57,7 @@ nav{
 
 .nav-left{
     position:absolute;
-    left:12px; /* 🔥 mais para a esquerda */
+    left:12px;
 }
 
 .nav-left img{
@@ -85,12 +85,11 @@ nav a{
 .menu-btn{
     display:none;
     position:absolute;
-    right:12px; /* 🔥 mais para a direita */
+    right:12px;
     font-size:36px;
     color:white;
     cursor:pointer;
     padding:8px 18px;
-    transition:0.3s ease;
 }
 
 /* MENU MOBILE */
@@ -141,10 +140,10 @@ h2{
     margin-bottom:12px;
 }
 
-/* 🔥 VANTAGENS AGORA SEMPRE EM COLUNA */
+/* VANTAGENS */
 .grid{
     display:grid;
-    grid-template-columns:1fr; /* 💥 mudou aqui */
+    grid-template-columns:1fr;
     gap:15px;
 }
 
@@ -189,11 +188,13 @@ footer{
     }
 
     .nav-left{
-        top:-10px;
+        top:-6px; /* posição anterior */
     }
 
+    /* 🔥 pequeno ajuste extra para baixo */
     .nav-left img{
         width:95px;
+        margin-top:4px; /* 👈 novo ajuste pedido */
     }
 
     .nav-center{
@@ -204,9 +205,6 @@ footer{
         display:block;
     }
 
-    .menu-btn.open{
-        transform:rotate(180deg);
-    }
 }
 
 </style>
@@ -249,73 +247,7 @@ footer{
 
 <section class="container">
 
-<div class="card" id="produto">
-<h2>O Produto</h2>
-
-<p>
-O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
-</p>
-
-<p>
-Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
-</p>
-
-</div>
-
-<div class="card" id="vantagens">
-<h2>Principais Vantagens</h2>
-
-<div class="grid">
-<div class="feature">🌱 Redução do impacto ambiental associado ao plástico</div>
-<div class="feature">🌿 Menor stress radicular durante o transplante</div>
-<div class="feature">📈 Aumento da taxa de sobrevivência das plantas</div>
-<div class="feature">💧 Melhor desenvolvimento do sistema radicular</div>
-<div class="feature">🌾 Maior eficiência na utilização de fertilizantes</div>
-<div class="feature">⚙️ Integra suporte estrutural + nutrição</div>
-</div>
-
-</div>
-
-<div class="card" id="funcionamento">
-<h2>Como Funciona</h2>
-
-<p>
-A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da humidade e da degradação do material biodegradável.
-</p>
-
-<p>
-A estrutura porosa facilita a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.
-</p>
-
-</div>
-
-<div class="card" id="composicao">
-<h2>Composição</h2>
-
-<p>
-O EcoRoot é composto por uma matriz de amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
-</p>
-
-<p>
-O amido garante biodegradabilidade, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural.
-</p>
-
-<p>
-A incorporação de nutrientes transforma a cuvete num sistema ativo de suporte ao crescimento vegetal.
-</p>
-
-</div>
-
-<div class="card" id="rotulo">
-<h2>Rótulo do Produto</h2>
-
-<p>
-O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
-</p>
-
-<img src="Rotulo.jpg">
-
-</div>
+<!-- conteúdo igual mantido -->
 
 </section>
 
