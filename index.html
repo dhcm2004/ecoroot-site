@@ -37,7 +37,7 @@ body{
     padding:20px;
 }
 
-/* NAV (DESKTOP INTACTO) */
+/* NAV DESKTOP (INALTERADO) */
 nav{
     position:fixed;
     top:0;
@@ -82,7 +82,7 @@ nav a{
     font-weight:500;
 }
 
-/* MENU BUTTON */
+/* BOTÃO MENU */
 .menu-btn{
     display:none;
     position:absolute;
@@ -92,27 +92,19 @@ nav a{
     cursor:pointer;
 }
 
-/* MOBILE MENU */
+/* MENU MOBILE */
 .mobile-menu{
     display:none;
     flex-direction:column;
     background:rgba(0,0,0,0.95);
     position:fixed;
-    top:100%;
     left:0;
     width:100%;
     text-align:center;
     z-index:999;
 }
 
-.mobile-menu a{
-    color:white;
-    padding:14px;
-    text-decoration:none;
-    font-size:14px;
-}
-
-/* CONTAINER */
+/* CONTEÚDO */
 .container{
     background:#f9fafb;
     padding:60px 20px;
@@ -174,15 +166,14 @@ footer{
 /* ================= MOBILE ================= */
 @media(max-width:768px){
 
-    /* barra mais alta no mobile */
+    /* 🔥 BARRA MAIS ALTA NO MOBILE */
     nav{
-        padding:18px 10px;
+        padding:26px 10px; /* AUMENTADA */
         justify-content:flex-end;
     }
 
     .nav-left img{
-        width:90px; /* ↑ LOGO MAIOR NO MOBILE */
-        padding:5px;
+        width:90px;
     }
 
     .nav-center{
@@ -193,9 +184,25 @@ footer{
         display:block;
     }
 
+    /* 🔥 MENU ABRE LOGO ABAIXO DA BARRA NOVA */
+    .mobile-menu{
+        top:78px; /* ajustado à nova altura da barra */
+    }
+
     .mobile-menu.active{
         display:flex;
-        top:70px; /* abaixo da barra */
+    }
+
+    .mobile-menu a{
+        color:white;
+        padding:14px;
+        text-decoration:none;
+        font-size:14px;
+        background:rgba(0,0,0,0.95);
+    }
+
+    .hero{
+        height:90vh;
     }
 
     .hero h1{
@@ -269,7 +276,7 @@ footer{
 </section>
 
 <section class="container">
-<!-- conteúdo igual ao teu original -->
+<!-- teu conteúdo 그대로 -->
 </section>
 
 <footer>
