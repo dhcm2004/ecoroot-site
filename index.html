@@ -88,22 +88,6 @@ nav a{
     font-size:30px;
     color:white;
     cursor:pointer;
-    user-select:none;
-}
-
-/* CONTAINER */
-.container{
-    background:#f9fafb;
-    padding:60px 20px;
-}
-
-.card{
-    max-width:1000px;
-    margin:20px auto;
-    background:white;
-    padding:40px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* HERO TEXT */
@@ -118,12 +102,13 @@ nav a{
 }
 
 /* =========================
-   MOBILE
+   MOBILE FINAL (3 + 2)
 ========================= */
 @media(max-width:768px){
 
+    /* 🔲 barra ligeiramente menor */
     nav{
-        padding:34px 12px;
+        padding:28px 12px;
         justify-content:flex-start;
     }
 
@@ -131,6 +116,12 @@ nav a{
         display:block;
     }
 
+    .nav-left img{
+        width:75px;
+        padding:4px;
+    }
+
+    /* MENU 3 EM CIMA + 2 EM BAIXO */
     .nav-center{
         display:none;
         position:absolute;
@@ -139,21 +130,35 @@ nav a{
         width:100%;
         background:rgba(0,0,0,0.95);
 
-        flex-direction:row;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:12px;
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:10px;
 
         padding:12px 10px;
+        text-align:center;
     }
 
     .nav-center.active{
-        display:flex;
+        display:grid;
+    }
+
+    /* força o 3 + 2 */
+    .nav-center a:nth-child(4),
+    .nav-center a:nth-child(5){
+        grid-column: span 1;
     }
 
     nav a{
         font-size:13px;
-        padding:6px 10px;
+        padding:8px 0;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
     }
 }
 
@@ -168,10 +173,8 @@ nav a{
         <img src="logo.png">
     </div>
 
-    <!-- BOTÃO -->
     <div class="menu-toggle" id="menuBtn" onclick="toggleMenu()">☰</div>
 
-    <!-- MENU -->
     <div class="nav-center" id="menu">
         <a href="#produto" onclick="closeMenu()">Produto</a>
         <a href="#vantagens" onclick="closeMenu()">Vantagens</a>
