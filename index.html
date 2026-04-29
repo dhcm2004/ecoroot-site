@@ -60,12 +60,14 @@ nav{
 
 .nav-left img{
     width:115px;
+    height:auto;
+    object-fit:contain;
     background:white;
     padding:6px;
     border-radius:6px;
 }
 
-/* MENU DESKTOP */
+/* LINKS DESKTOP */
 .nav-center{
     display:flex;
     gap:22px;
@@ -78,16 +80,12 @@ nav a{
     font-weight:500;
 }
 
-/* =========================
-   BOTÃO MOBILE (CORRIGIDO)
-========================= */
+/* BOTÃO MENU */
 .menu-toggle{
     display:none;
 
     position:absolute;
-    right:unset;      /* remove direita */
-    left:12px;        /* 👈 agora fica mais para a esquerda */
-
+    right:18px;   /* 👈 FIXO À DIREITA */
     top:50%;
     transform:translateY(-50%);
 
@@ -96,7 +94,7 @@ nav a{
     cursor:pointer;
     user-select:none;
 
-    padding:8px;      /* área clicável maior */
+    padding:8px;
     border-radius:6px;
 }
 
@@ -106,7 +104,6 @@ nav a{
     padding:60px 20px;
 }
 
-/* CARDS */
 .card{
     max-width:1000px;
     margin:20px auto;
@@ -141,7 +138,7 @@ footer{
 @media(max-width:768px){
 
     nav{
-        padding:14px 10px;
+        padding:14px 14px;
         justify-content:flex-start;
     }
 
@@ -154,9 +151,10 @@ footer{
         padding:4px;
     }
 
-    /* BOTÃO aparece */
+    /* BOTÃO VISÍVEL À DIREITA SEM SAIR */
     .menu-toggle{
         display:block;
+        right:14px;   /* 👈 garante margem dentro do ecrã */
     }
 
     /* MENU */
@@ -202,7 +200,6 @@ footer{
         <img src="logo.png">
     </div>
 
-    <!-- BOTÃO MOBILE -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <div class="nav-center" id="menu">
@@ -223,49 +220,11 @@ footer{
     </div>
 </section>
 
-<section class="container">
-
-<div class="card" id="produto">
-<h2>O Produto</h2>
-<p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas...</p>
-</div>
-
-<div class="card" id="vantagens">
-<h2>Principais Vantagens</h2>
-<div class="grid">
-<div class="feature">🌱 Redução do impacto ambiental associado ao plástico</div>
-<div class="feature">🌿 Menor stress radicular durante o transplante</div>
-<div class="feature">📈 Aumento da taxa de sobrevivência das plantas</div>
-<div class="feature">💧 Melhor desenvolvimento do sistema radicular</div>
-<div class="feature">🌾 Maior eficiência na utilização de fertilizantes</div>
-<div class="feature">⚙️ Integra suporte estrutural + nutrição</div>
-</div>
-</div>
-
-<div class="card" id="funcionamento">
-<h2>Como Funciona</h2>
-<p>A cuvete integra nutrientes essenciais...</p>
-</div>
-
-<div class="card" id="composicao">
-<h2>Composição</h2>
-<p>O EcoRoot é composto por...</p>
-</div>
-
-<div class="card" id="rotulo">
-<h2>Rótulo do Produto</h2>
-<p>O rótulo inclui informação técnica...</p>
-<img src="Rotulo.jpg">
-</div>
-
-</section>
-
 <footer>
 EcoRoot™ | Projeto académico – Solução sustentável para viveiros florestais
 </footer>
 
 <script>
-
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("active");
 }
@@ -273,7 +232,6 @@ function toggleMenu(){
 function closeMenu(){
     document.getElementById("menu").classList.remove("active");
 }
-
 </script>
 
 </body>
