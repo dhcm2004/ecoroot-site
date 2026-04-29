@@ -67,7 +67,7 @@ nav{
     border-radius:6px;
 }
 
-/* LINKS */
+/* LINKS DESKTOP */
 .nav-center{
     display:flex;
     gap:22px;
@@ -145,7 +145,7 @@ footer{
 }
 
 /* =========================
-   MOBILE (CORRIGIDO)
+   MOBILE (NAV 3 + 2)
 ========================= */
 @media(max-width:768px){
 
@@ -153,7 +153,6 @@ footer{
         background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
         url('Fundo-mobile.jpg');
         height:90vh;
-        padding:20px;
     }
 
     .hero h1{
@@ -162,20 +161,19 @@ footer{
 
     .hero p{
         font-size:16px;
-        padding:0 10px;
     }
 
-    /* NAV CORRIGIDA */
+    /* NAV reorganizada em 2 linhas */
     nav{
-        padding:14px 10px;
-        justify-content:center;
-        flex-wrap:wrap; /* 🔥 permite não cortar */
+        padding:12px 10px;
+        flex-direction:column;
+        align-items:center;
     }
 
     .nav-left{
         position:relative;
         left:0;
-        margin-right:10px;
+        margin-bottom:8px;
     }
 
     .nav-left img{
@@ -183,17 +181,19 @@ footer{
         padding:4px;
     }
 
+    /* GRID 3 + 2 */
     .nav-center{
-        display:flex;
-        flex-wrap:wrap;        /* 🔥 chave do fix */
-        justify-content:center;
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
         gap:6px;
-        max-width:100%;
+        width:100%;
+        text-align:center;
     }
 
-    nav a{
+    /* força os 5 itens a encaixar em 3+2 automaticamente */
+    .nav-center a{
         font-size:11px;
-        padding:4px 6px;
+        padding:6px 0;
         white-space:nowrap;
     }
 
@@ -253,8 +253,8 @@ footer{
 
 <div class="card" id="produto">
 <h2>O Produto</h2>
-<p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.</p>
-<p>Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.</p>
+<p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas.</p>
+<p>Permite o plantio direto no solo sem remoção do recipiente.</p>
 </div>
 
 <div class="card" id="vantagens">
@@ -273,20 +273,19 @@ footer{
 
 <div class="card" id="funcionamento">
 <h2>Como Funciona</h2>
-<p>A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da humidade e da degradação do material biodegradável.</p>
-<p>A estrutura porosa facilita a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.</p>
+<p>A cuvete liberta nutrientes gradualmente no solo através da humidade e biodegradação.</p>
+<p>A estrutura porosa melhora água e oxigénio para as raízes.</p>
 </div>
 
 <div class="card" id="composicao">
 <h2>Composição</h2>
-<p>O EcoRoot é composto por uma matriz de amido termoplástico (TPS), fibras de celulose e fertilizante NPK.</p>
-<p>O amido garante biodegradabilidade, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural.</p>
-<p>A incorporação de nutrientes transforma a cuvete num sistema ativo de suporte ao crescimento vegetal.</p>
+<p>Amido termoplástico (TPS), fibras de celulose e fertilizante NPK.</p>
+<p>Garante biodegradabilidade e resistência estrutural.</p>
 </div>
 
 <div class="card" id="rotulo">
 <h2>Rótulo do Produto</h2>
-<p>O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.</p>
+<p>Inclui informação técnica e QR code para dados adicionais.</p>
 <img src="Rotulo.jpg">
 </div>
 
