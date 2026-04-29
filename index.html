@@ -43,7 +43,7 @@ nav{
     top:0;
     width:100%;
     background:rgba(0,0,0,0.85);
-    padding:26px 20px;
+    padding:28px 20px; /* 🔥 ligeiramente maior */
     z-index:1000;
     backdrop-filter: blur(10px);
 
@@ -84,7 +84,9 @@ nav a{
 .menu-toggle{
     display:none;
     position:absolute;
-    right:20px;
+    right:18px; /* 🔥 alinhado correto */
+    top:50%;
+    transform:translateY(-50%);
     font-size:28px;
     color:white;
     cursor:pointer;
@@ -175,7 +177,7 @@ footer{
 
     /* 🔥 BARRA MAIS ALTA */
     nav{
-        padding:22px 10px;
+        padding:26px 12px;
         justify-content:flex-start;
     }
 
@@ -185,14 +187,16 @@ footer{
         padding:4px;
     }
 
-    /* 🔥 BOTÃO MAIS À ESQUERDA */
+    /* 🔥 BOTÃO CORRIGIDO */
     .menu-toggle{
         display:block;
-        right:12px;
+        right:14px; /* alinhado perfeito */
+        top:50%;
+        transform:translateY(-50%);
         font-size:30px;
     }
 
-    /* MENU MOBILE */
+    /* MENU */
     .nav-center{
         display:none;
         flex-direction:column;
