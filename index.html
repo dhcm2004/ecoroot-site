@@ -22,7 +22,7 @@ body{
     line-height:1.6;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
     background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
     url('Fundo-desktop.jpg');
@@ -37,7 +37,7 @@ body{
     padding:20px;
 }
 
-/* NAV */
+/* ================= NAV (DESKTOP INTACTO) ================= */
 nav{
     position:fixed;
     top:0;
@@ -62,6 +62,7 @@ nav{
 
 .nav-left img{
     width:105px;
+    height:auto;
     background:white;
     padding:5px;
     border-radius:6px;
@@ -80,7 +81,7 @@ nav a{
     font-weight:500;
 }
 
-/* BOTÃO MENU */
+/* ================= BOTÃO MENU ================= */
 .menu-btn{
     display:none;
     position:absolute;
@@ -88,9 +89,10 @@ nav a{
     font-size:30px;
     color:white;
     cursor:pointer;
+    transition:0.3s ease;
 }
 
-/* MENU MOBILE */
+/* ================= MENU MOBILE ================= */
 .mobile-menu{
     position:fixed;
     left:0;
@@ -98,17 +100,17 @@ nav a{
     background:rgba(0,0,0,0.95);
     z-index:999;
 
-    display:none;
+    display:flex;
     flex-direction:column;
     text-align:center;
 
-    overflow:hidden;
     max-height:0;
+    overflow:hidden;
     opacity:0;
-    transition:all 0.35s ease;
+
+    transition:max-height 0.4s ease, opacity 0.3s ease;
 }
 
-/* 🔥 MENU VERTICAL */
 .mobile-menu a{
     color:white;
     padding:16px;
@@ -117,7 +119,7 @@ nav a{
     border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-/* CONTENT */
+/* ================= CONTEÚDO ================= */
 .container{
     background:#f9fafb;
     padding:60px 20px;
@@ -176,11 +178,11 @@ footer{
     opacity:0.95;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
 
     nav{
-        padding:34px 10px;
+        padding:22px 10px; /* barra um pouco mais leve */
         justify-content:flex-end;
     }
 
@@ -196,10 +198,8 @@ footer{
         display:block;
     }
 
-    .mobile-menu.active{
-        display:flex;
-        max-height:500px;
-        opacity:1;
+    .menu-btn.open{
+        transform:rotate(180deg);
     }
 }
 
@@ -208,7 +208,7 @@ footer{
 
 <body>
 
-<nav>
+<nav id="navBar">
 
     <div class="nav-left">
         <img src="logo.png">
@@ -222,7 +222,7 @@ footer{
         <a href="#rotulo">Rótulo</a>
     </div>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
 
 </nav>
 
@@ -242,7 +242,75 @@ footer{
 </section>
 
 <section class="container">
-<!-- teu conteúdo 그대로 -->
+
+<div class="card" id="produto">
+<h2>O Produto</h2>
+
+<p>
+O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
+</p>
+
+<p>
+Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
+</p>
+
+</div>
+
+<div class="card" id="vantagens">
+<h2>Principais Vantagens</h2>
+
+<div class="grid">
+<div class="feature">🌱 Redução do impacto ambiental associado ao plástico</div>
+<div class="feature">🌿 Menor stress radicular durante o transplante</div>
+<div class="feature">📈 Aumento da taxa de sobrevivência das plantas</div>
+<div class="feature">💧 Melhor desenvolvimento do sistema radicular</div>
+<div class="feature">🌾 Maior eficiência na utilização de fertilizantes</div>
+<div class="feature">⚙️ Integra suporte estrutural + nutrição</div>
+</div>
+
+</div>
+
+<div class="card" id="funcionamento">
+<h2>Como Funciona</h2>
+
+<p>
+A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da humidade e da degradação do material biodegradável.
+</p>
+
+<p>
+A estrutura porosa facilita a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.
+</p>
+
+</div>
+
+<div class="card" id="composicao">
+<h2>Composição</h2>
+
+<p>
+O EcoRoot é composto por uma matriz de amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
+</p>
+
+<p>
+O amido garante biodegradabilidade, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural.
+</p>
+
+<p>
+A incorporação de nutrientes transforma a cuvete num sistema ativo de suporte ao crescimento vegetal.
+</p>
+
+</div>
+
+<div class="card" id="rotulo">
+<h2>Rótulo do Produto</h2>
+
+<p>
+O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
+</p>
+
+<img src="Rotulo.jpg">
+
+</div>
+
 </section>
 
 <footer>
@@ -250,22 +318,32 @@ EcoRoot™ | Projeto académico – Solução sustentável para viveiros florest
 </footer>
 
 <script>
+
 function toggleMenu(){
 
     const menu = document.getElementById("mobileMenu");
-    const nav = document.querySelector("nav");
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("navBar");
 
-    const isOpen = menu.classList.contains("active");
+    const isOpen = menu.style.maxHeight && menu.style.maxHeight !== "0px";
 
     if(isOpen){
-        menu.classList.remove("active");
-        menu.style.top = "0px";
+        menu.style.maxHeight = "0px";
+        menu.style.opacity = "0";
+        btn.innerHTML = "☰";
+        btn.classList.remove("open");
     }else{
         const height = nav.offsetHeight;
+
         menu.style.top = height + "px";
-        menu.classList.add("active");
+        menu.style.maxHeight = "600px";
+        menu.style.opacity = "1";
+
+        btn.innerHTML = "✕";
+        btn.classList.add("open");
     }
 }
+
 </script>
 
 </body>
