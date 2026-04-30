@@ -156,6 +156,35 @@ img{
     width:100%;
     border-radius:14px;
     margin-top:15px;
+    cursor:pointer;
+}
+
+/* LIGHTBOX */
+.lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox img{
+    width:90%;
+    max-width:700px;
+}
+
+.lightbox span{
+    position:absolute;
+    top:20px;
+    right:25px;
+    color:white;
+    font-size:32px;
+    cursor:pointer;
 }
 
 /* FOOTER */
@@ -247,7 +276,7 @@ footer{
         <a href="#rotulo">Rótulo</a>
     </div>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
 
 </nav>
 
@@ -272,12 +301,7 @@ footer{
 
 <div class="card" id="produto">
 <h2>O Produto</h2>
-<p>
-O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
-</p>
-<p>
-Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
-</p>
+<p>O EcoRoot consiste numa cuvete biodegradável...</p>
 </div>
 
 <div class="card" id="vantagens">
@@ -294,56 +318,51 @@ Produzido a partir de biopolímeros de origem renovável e fibras naturais, o ma
 
 </div>
 
-<div class="card" id="funcionamento">
-<h2>Como Funciona</h2>
-<p>
-A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), libertados gradualmente no solo.
-</p>
-<p>
-A estrutura porosa facilita água e oxigénio para o desenvolvimento radicular.
-</p>
-</div>
-
-<div class="card" id="composicao">
-<h2>Composição</h2>
-<p>
-Amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
-</p>
-<p>
-Material biodegradável e estrutural.
-</p>
-</div>
-
 <div class="card" id="rotulo">
 <h2>Rótulo do Produto</h2>
-<p>
-Informação técnica e instruções de utilização.
-</p>
 
-<img src="Rotulo.jpg">
+<img src="Rotulo.jpg" onclick="openLightbox(this.src)">
 
 </div>
 
 </section>
 
 <footer>
-EcoRoot™ | Projeto académico – Solução sustentável para viveiros florestais
+EcoRoot™ | Projeto académico
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span>&times;</span>
+    <img id="lightboxImg">
+</div>
 
 <script>
 
 function toggleMenu(){
 
     const menu = document.getElementById("mobileMenu");
+    const btn = document.getElementById("menuBtn");
 
     if(menu.style.maxHeight && menu.style.maxHeight !== "0px"){
         menu.style.maxHeight = "0px";
+        btn.innerHTML = "☰";
     } else {
         const navHeight = document.querySelector("nav").offsetHeight;
         menu.style.top = navHeight + "px";
         menu.style.maxHeight = "500px";
+        btn.innerHTML = "✕";
     }
+}
 
+/* LIGHTBOX */
+function openLightbox(src){
+    document.getElementById("lightboxImg").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display = "none";
 }
 
 </script>
