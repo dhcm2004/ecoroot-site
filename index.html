@@ -19,19 +19,24 @@ body{
     font-family:'Inter',sans-serif;
     color:#111827;
     background:#000;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 /* HERO */
 .hero{
-    background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
     url('Fundo-desktop.jpg');
+
     background-size:cover;
     background-position:center;
+
     height:100vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
     color:white;
     padding:20px;
@@ -42,13 +47,15 @@ nav{
     position:fixed;
     top:0;
     width:100%;
+
     background:rgba(0,0,0,0.85);
 
     padding:16px 20px;
     padding-bottom:22px;
 
     z-index:1000;
-    backdrop-filter: blur(10px);
+
+    backdrop-filter:blur(10px);
 
     display:flex;
     align-items:center;
@@ -63,7 +70,7 @@ nav{
 .nav-left img{
     width:105px;
     height:auto;
-    background:white;
+    background:transparent;
     padding:5px;
     border-radius:6px;
 }
@@ -86,8 +93,8 @@ nav a{
     display:none;
     position:absolute;
     right:32px;
-    width:32px;
-    height:24px;
+    width:30px;
+    height:22px;
     cursor:pointer;
 }
 
@@ -101,12 +108,12 @@ nav a{
 }
 
 .menu-btn span:nth-child(1){ top:0; }
-.menu-btn span:nth-child(2){ top:10px; }
+.menu-btn span:nth-child(2){ top:9px; }
 .menu-btn span:nth-child(3){ bottom:0; }
 
 .menu-btn.active span:nth-child(1){
     transform:rotate(45deg);
-    top:10px;
+    top:9px;
 }
 
 .menu-btn.active span:nth-child(2){
@@ -115,7 +122,7 @@ nav a{
 
 .menu-btn.active span:nth-child(3){
     transform:rotate(-45deg);
-    top:10px;
+    top:9px;
 }
 
 /* MENU MOBILE */
@@ -123,7 +130,9 @@ nav a{
     position:fixed;
     left:0;
     width:100%;
+
     background:rgba(0,0,0,0.95);
+
     z-index:999;
 
     display:flex;
@@ -132,6 +141,7 @@ nav a{
 
     max-height:0;
     overflow:hidden;
+
     transition:max-height 0.4s ease;
 }
 
@@ -149,31 +159,39 @@ nav a{
     padding:60px 20px;
 }
 
+/* CARDS */
 .card{
     max-width:1000px;
     margin:20px auto;
+
     background:white;
+
     padding:40px;
+
     border-radius:18px;
+
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 h2{
     color:#166534;
-    font-size:24px;
-    margin-bottom:12px;
+    font-size:28px;
+    margin-bottom:18px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+p{
+    font-size:17px;
+    margin-bottom:18px;
 }
 
-.feature{
-    background:#f3f4f6;
-    padding:18px;
-    border-radius:12px;
+/* LISTAS */
+.info-list{
+    padding-left:20px;
+}
+
+.info-list li{
+    margin-bottom:10px;
+    font-size:16px;
 }
 
 /* IMG */
@@ -181,6 +199,34 @@ img{
     width:100%;
     border-radius:14px;
     margin-top:15px;
+    cursor:pointer;
+}
+
+/* LIGHTBOX */
+.lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox img{
+    width:90%;
+    max-width:700px;
+}
+
+.lightbox span{
+    position:absolute;
+    top:20px;
+    right:25px;
+    color:white;
+    font-size:32px;
     cursor:pointer;
 }
 
@@ -210,8 +256,10 @@ footer{
 @media(max-width:768px){
 
     .hero{
-        background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
         url('Fundo-mobile.jpg');
+
         height:90vh;
         padding:20px;
     }
@@ -222,12 +270,15 @@ footer{
 
     .hero p{
         font-size:16px;
-        padding:0 10px;
     }
 
     nav{
         padding:28px 10px;
         justify-content:flex-end;
+    }
+
+    .nav-left{
+        left:10px;
     }
 
     .nav-left img{
@@ -244,10 +295,21 @@ footer{
         display:block;
     }
 
-    .grid{
-        grid-template-columns:1fr;
-    }
+}
 
+/* ANIMAÇÃO MENU */
+.menu-btn.active span:nth-child(1){
+    transform:rotate(45deg);
+    top:9px;
+}
+
+.menu-btn.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-btn.active span:nth-child(3){
+    transform:rotate(-45deg);
+    top:9px;
 }
 
 </style>
@@ -263,9 +325,12 @@ footer{
 
     <div class="nav-center">
         <a href="#produto">Produto</a>
-        <a href="#vantagens">Vantagens</a>
         <a href="#funcionamento">Funcionamento</a>
         <a href="#composicao">Composição</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#sustentabilidade">Sustentabilidade</a>
+        <a href="#rotulo">Rótulo</a>
     </div>
 
     <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
@@ -278,15 +343,18 @@ footer{
 
 <div class="mobile-menu" id="mobileMenu">
     <a href="#produto" onclick="toggleMenu()">Produto</a>
-    <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
     <a href="#funcionamento" onclick="toggleMenu()">Funcionamento</a>
     <a href="#composicao" onclick="toggleMenu()">Composição</a>
+    <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
+    <a href="#aplicacoes" onclick="toggleMenu()">Aplicações</a>
+    <a href="#sustentabilidade" onclick="toggleMenu()">Sustentabilidade</a>
+    <a href="#rotulo" onclick="toggleMenu()">Rótulo</a>
 </div>
 
 <section class="hero">
     <div>
-        <h1>EcoRoot</h1>
-        <p>Cuvete biodegradável para suporte e nutrição de plantas</p>
+        <h1>EcoRoot™</h1>
+        <p>A cuvete biodegradável que nutre e protege o crescimento da sua planta</p>
     </div>
 </section>
 
@@ -295,47 +363,84 @@ footer{
 <div class="card" id="produto">
 <h2>O Produto</h2>
 <p>
-EcoRoot™ é uma cuvete biodegradável que combina suporte físico, retenção de humidade e libertação gradual de nutrientes, promovendo o crescimento inicial das plantas.
+O EcoRoot™ é uma solução biodegradável que combina suporte estrutural e nutrição gradual, promovendo um crescimento inicial mais eficiente das plantas e reduzindo o impacto ambiental.
 </p>
 </div>
 
-<div class="card" id="vantagens">
-<h2>Vantagens</h2>
-<div class="grid">
-<div class="feature">Redução de resíduos plásticos</div>
-<div class="feature">Menor stress no transplante</div>
-<div class="feature">Libertação controlada de nutrientes</div>
-<div class="feature">Maior sobrevivência das plantas</div>
-</div>
-</div>
-
 <div class="card" id="funcionamento">
-<h2>Funcionamento</h2>
+<h2>Como Funciona</h2>
 <p>
-A água penetra na estrutura porosa, ativando a libertação gradual dos nutrientes incorporados e acompanhando o crescimento da planta.
+A cuvete absorve água gradualmente, dissolvendo os nutrientes incorporados e libertando-os de forma controlada conforme as necessidades da planta.
 </p>
 </div>
 
 <div class="card" id="composicao">
+
 <h2>Composição e Informação Técnica</h2>
+
 <p>
-A EcoRoot™ é produzida com materiais biodegradáveis e fertilização incorporada.
+O EcoRoot™ é desenvolvido com materiais biodegradáveis e nutrientes essenciais ao desenvolvimento vegetal:
 </p>
 
-<ul>
-<li>Amido termoplástico (TPS), fibras de celulose e glicerol</li>
-<li>NPK 18–6–18 com libertação gradual</li>
-<li>Biodegradação: 1–2 anos (dependendo do solo)</li>
-<li>Armazenamento: local seco e ventilado</li>
+<ul class="info-list">
+    <li>Amido termoplástico (TPS)</li>
+    <li>Fibras de celulose</li>
+    <li>Glicerol</li>
+    <li>Fertilizantes NPK (18–6–18)</li>
 </ul>
+
+<p>
+A composição fertilizante NPK 18–6–18 fornece um equilíbrio entre crescimento vegetativo, desenvolvimento radicular e resistência da planta.
+</p>
+
+<ul class="info-list">
+    <li>Biodegradação: 1–2 anos (dependente do solo)</li>
+    <li>Armazenamento: local seco e ventilado</li>
+</ul>
+
+</div>
+
+<div class="card" id="vantagens">
+<h2>Vantagens</h2>
+
+<ul class="info-list">
+    <li>Redução de resíduos plásticos</li>
+    <li>Menor stress no transplante</li>
+    <li>Libertação controlada de nutrientes</li>
+    <li>Melhor retenção de humidade</li>
+</ul>
+
+</div>
+
+<div class="card" id="aplicacoes">
+<h2>Aplicações</h2>
+
+<ul class="info-list">
+    <li>Viveiros florestais</li>
+    <li>Reflorestação</li>
+    <li>Produção agrícola</li>
+</ul>
+
+</div>
+
+<div class="card" id="rotulo">
+<h2>Rótulo</h2>
+<p>Informação técnica do produto.</p>
+
+<img src="Rotulo.jpg" onclick="openLightbox(this.src)">
 
 </div>
 
 </section>
 
 <footer>
-Universidade de Aveiro — Projeto académico
+EcoRoot™ | Universidade de Aveiro – Departamento de Engenharia Química
 </footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span>&times;</span>
+    <img id="lightboxImg">
+</div>
 
 <script>
 
@@ -352,6 +457,15 @@ function toggleMenu(){
         menu.style.top = navHeight + "px";
         menu.style.maxHeight = "500px";
     }
+}
+
+function openLightbox(src){
+    document.getElementById("lightboxImg").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display = "none";
 }
 
 </script>
