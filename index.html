@@ -85,9 +85,9 @@ nav a{
 .menu-btn{
     display:none;
     position:absolute;
-    right:32px;
-    width:30px;
-    height:22px;
+    right:24px;
+    width:34px;
+    height:26px;
     cursor:pointer;
 }
 
@@ -97,25 +97,35 @@ nav a{
     height:3px;
     background:white;
     left:0;
-    transition:0.3s;
+    border-radius:3px;
+    transition:all 0.35s ease;
 }
 
-.menu-btn span:nth-child(1){ top:0; }
-.menu-btn span:nth-child(2){ top:9px; }
-.menu-btn span:nth-child(3){ bottom:0; }
+.menu-btn span:nth-child(1){
+    top:0;
+}
+
+.menu-btn span:nth-child(2){
+    top:11px;
+}
+
+.menu-btn span:nth-child(3){
+    top:22px;
+}
 
 .menu-btn.active span:nth-child(1){
     transform:rotate(45deg);
-    top:9px;
+    top:11px;
 }
 
 .menu-btn.active span:nth-child(2){
     opacity:0;
+    transform:scaleX(0);
 }
 
 .menu-btn.active span:nth-child(3){
     transform:rotate(-45deg);
-    top:9px;
+    top:11px;
 }
 
 /* MENU MOBILE */
@@ -241,6 +251,8 @@ footer{
     .hero{
         background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
         url('Fundo-mobile.jpg');
+        background-size:cover;
+        background-position:center;
         height:90vh;
         padding:20px;
     }
@@ -279,6 +291,11 @@ footer{
 
     .grid{
         grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:24px;
+        margin:15px 10px;
     }
 
 }
@@ -331,50 +348,71 @@ footer{
 
 <div class="card" id="produto">
 <h2>O Produto</h2>
+
 <p>
 O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
 </p>
+
 <p>
 Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
 </p>
+
 </div>
 
 <div class="card" id="vantagens">
+
 <h2>Principais Vantagens</h2>
 
 <div class="grid">
+
 <div class="feature">🌱 Redução do impacto ambiental associado ao plástico</div>
+
 <div class="feature">🌿 Menor stress radicular durante o transplante</div>
+
 <div class="feature">📈 Aumento da taxa de sobrevivência das plantas</div>
+
 <div class="feature">💧 Melhor desenvolvimento do sistema radicular</div>
+
 <div class="feature">🌾 Maior eficiência na utilização de fertilizantes</div>
+
 <div class="feature">⚙️ Integra suporte estrutural + nutrição</div>
+
 </div>
 
 </div>
 
 <div class="card" id="funcionamento">
+
 <h2>Como Funciona</h2>
+
 <p>
 A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), libertados gradualmente no solo.
 </p>
+
 <p>
 A estrutura porosa facilita água e oxigénio para o desenvolvimento radicular.
 </p>
+
 </div>
 
 <div class="card" id="composicao">
+
 <h2>Composição</h2>
+
 <p>
 Amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
 </p>
+
 <p>
 Material biodegradável e estrutural.
 </p>
+
 </div>
 
 <div class="card" id="rotulo">
+
 <h2>Rótulo do Produto</h2>
+
 <p>
 Informação técnica e instruções de utilização.
 </p>
@@ -405,22 +443,33 @@ function toggleMenu(){
     btn.classList.toggle("active");
 
     if(menu.style.maxHeight && menu.style.maxHeight !== "0px"){
+
         menu.style.maxHeight = "0px";
+
     } else {
+
         const navHeight = document.querySelector("nav").offsetHeight;
+
         menu.style.top = navHeight + "px";
+
         menu.style.maxHeight = "500px";
+
     }
 
 }
 
 function openLightbox(src){
+
     document.getElementById("lightboxImg").src = src;
+
     document.getElementById("lightbox").style.display = "flex";
+
 }
 
 function closeLightbox(){
+
     document.getElementById("lightbox").style.display = "none";
+
 }
 
 </script>
