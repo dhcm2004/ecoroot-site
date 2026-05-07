@@ -19,21 +19,27 @@ body{
     font-family:'Inter',sans-serif;
     color:#111827;
     background:#000;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 /* HERO */
 .hero{
-    background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
     url('Fundo-desktop.jpg');
+
     background-size:cover;
     background-position:center;
+
     height:100vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
     color:white;
+
     padding:20px;
 }
 
@@ -42,12 +48,14 @@ nav{
     position:fixed;
     top:0;
     width:100%;
+
     background:rgba(0,0,0,0.85);
 
     padding:16px 20px;
     padding-bottom:22px;
 
     z-index:1000;
+
     backdrop-filter: blur(10px);
 
     display:flex;
@@ -81,13 +89,13 @@ nav a{
     font-weight:500;
 }
 
-/* BOTÃO MENU ANIMADO */
+/* BOTÃO MENU */
 .menu-btn{
     display:none;
     position:absolute;
     right:24px;
-    width:34px;
-    height:26px;
+    width:32px;
+    height:24px;
     cursor:pointer;
 }
 
@@ -97,7 +105,7 @@ nav a{
     height:3px;
     background:white;
     left:0;
-    border-radius:3px;
+    border-radius:5px;
     transition:all 0.35s ease;
 }
 
@@ -106,26 +114,25 @@ nav a{
 }
 
 .menu-btn span:nth-child(2){
-    top:11px;
+    top:10px;
 }
 
 .menu-btn span:nth-child(3){
-    top:22px;
+    top:20px;
 }
 
 .menu-btn.active span:nth-child(1){
     transform:rotate(45deg);
-    top:11px;
+    top:10px;
 }
 
 .menu-btn.active span:nth-child(2){
     opacity:0;
-    transform:scaleX(0);
 }
 
 .menu-btn.active span:nth-child(3){
     transform:rotate(-45deg);
-    top:11px;
+    top:10px;
 }
 
 /* MENU MOBILE */
@@ -133,11 +140,14 @@ nav a{
     position:fixed;
     left:0;
     width:100%;
+
     background:rgba(0,0,0,0.95);
+
     z-index:999;
 
     display:flex;
     flex-direction:column;
+
     text-align:center;
 
     max-height:0;
@@ -160,50 +170,38 @@ nav a{
     padding:60px 20px;
 }
 
+/* CARDS */
 .card{
     max-width:1000px;
     margin:20px auto;
+
     background:white;
+
     padding:40px;
+
     border-radius:18px;
+
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 h2{
     color:#166534;
-    font-size:24px;
-    margin-bottom:12px;
+    font-size:28px;
+    margin-bottom:20px;
 }
 
-h3{
-    color:#166534;
-    margin-top:25px;
+p{
+    font-size:17px;
+    color:#374151;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+ul{
+    padding-left:20px;
 }
 
-.feature{
-    background:#f3f4f6;
-    padding:18px;
-    border-radius:12px;
-}
-
-/* FAQ */
-.faq-item{
-    background:#f3f4f6;
-    padding:20px;
-    border-radius:12px;
-    margin-top:15px;
-}
-
-.faq-item h3{
-    margin-top:0;
-    color:#166534;
-    font-size:18px;
+li{
+    margin-bottom:10px;
+    color:#374151;
 }
 
 /* IMG */
@@ -217,14 +215,20 @@ img{
 /* LIGHTBOX */
 .lightbox{
     display:none;
+
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
     height:100%;
+
     background:rgba(0,0,0,0.95);
+
     justify-content:center;
     align-items:center;
+
     z-index:9999;
 }
 
@@ -237,8 +241,10 @@ img{
     position:absolute;
     top:20px;
     right:25px;
+
     color:white;
-    font-size:32px;
+    font-size:36px;
+
     cursor:pointer;
 }
 
@@ -262,16 +268,17 @@ footer{
     margin-top:10px;
     font-weight:300;
     opacity:0.95;
+    color:white;
 }
 
 /* MOBILE */
 @media(max-width:768px){
 
     .hero{
-        background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
         url('Fundo-mobile.jpg');
-        background-size:cover;
-        background-position:center;
+
         height:90vh;
         padding:20px;
     }
@@ -297,7 +304,7 @@ footer{
     .nav-left img{
         width:95px;
         padding:4px;
-        margin-top:8px;
+        margin-top:6px;
     }
 
     .nav-center{
@@ -308,13 +315,18 @@ footer{
         display:block;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .card{
+        padding:25px;
+        margin:15px 10px;
     }
 
-    .card{
-        padding:24px;
-        margin:15px 10px;
+    h2{
+        font-size:22px;
+    }
+
+    p,
+    li{
+        font-size:15px;
     }
 
 }
@@ -332,9 +344,12 @@ footer{
 
     <div class="nav-center">
         <a href="#produto">Produto</a>
-        <a href="#vantagens">Vantagens</a>
         <a href="#funcionamento">Funcionamento</a>
         <a href="#composicao">Composição</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#sustentabilidade">Sustentabilidade</a>
+        <a href="#faq">FAQ</a>
         <a href="#rotulo">Rótulo</a>
     </div>
 
@@ -348,19 +363,29 @@ footer{
 
 <!-- MENU MOBILE -->
 <div class="mobile-menu" id="mobileMenu">
+
     <a href="#produto" onclick="toggleMenu()">Produto</a>
-    <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
     <a href="#funcionamento" onclick="toggleMenu()">Funcionamento</a>
     <a href="#composicao" onclick="toggleMenu()">Composição</a>
+    <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
+    <a href="#aplicacoes" onclick="toggleMenu()">Aplicações</a>
+    <a href="#sustentabilidade" onclick="toggleMenu()">Sustentabilidade</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
     <a href="#rotulo" onclick="toggleMenu()">Rótulo</a>
+
 </div>
 
 <!-- HERO -->
 <section class="hero">
+
     <div>
         <h1>EcoRoot™</h1>
-        <p>A cuvete biodegradável que nutre e protege o crescimento da sua planta</p>
+
+        <p>
+        A cuvete biodegradável que nutre e protege o crescimento da sua planta
+        </p>
     </div>
+
 </section>
 
 <section class="container">
@@ -390,30 +415,11 @@ Ao incorporar fertilizantes NPK diretamente na sua estrutura, a cuvete fornece n
 <h2>Como funciona?</h2>
 
 <p>
-A tecnologia EcoRoot™ baseia-se em três mecanismos principais:
+A tecnologia EcoRoot™ baseia-se na absorção gradual de água através da estrutura porosa da cuvete, permitindo que os fertilizantes incorporados na matriz sejam dissolvidos progressivamente.
 </p>
 
-<div class="grid">
-
-<div class="feature">
-<strong>1. Absorção gradual de água</strong><br><br>
-A estrutura porosa da cuvete permite a entrada controlada de água no material.
-</div>
-
-<div class="feature">
-<strong>2. Dissolução dos nutrientes</strong><br><br>
-A água dissolve progressivamente os fertilizantes incorporados na matriz.
-</div>
-
-<div class="feature">
-<strong>3. Libertação controlada</strong><br><br>
-Os nutrientes difundem-se gradualmente para o solo, acompanhando as necessidades da planta.
-</div>
-
-</div>
-
-<p style="margin-top:20px;">
-Este sistema reduz perdas por lixiviação e melhora a eficiência de utilização dos fertilizantes.
+<p>
+Os nutrientes difundem-se gradualmente para o solo, acompanhando as necessidades da planta ao longo das fases iniciais de crescimento. Este sistema reduz perdas por lixiviação e melhora significativamente a eficiência de utilização dos fertilizantes.
 </p>
 
 </div>
@@ -424,34 +430,12 @@ Este sistema reduz perdas por lixiviação e melhora a eficiência de utilizaç�
 <h2>Composição</h2>
 
 <p>
-A formulação EcoRoot™ é composta por:
+A formulação EcoRoot™ é composta por amido termoplástico (TPS), utilizado como matriz biodegradável principal, fibras de celulose para reforço estrutural e glicerol como plastificante.
 </p>
 
-<div class="grid">
-
-<div class="feature">
-🌾 <strong>Amido termoplástico (TPS)</strong><br><br>
-Matriz biodegradável principal
-</div>
-
-<div class="feature">
-🌿 <strong>Fibras de celulose</strong><br><br>
-Reforço estrutural
-</div>
-
-<div class="feature">
-💧 <strong>Glicerol</strong><br><br>
-Plastificante
-</div>
-
-<div class="feature">
-🧪 <strong>Fertilizantes NPK incorporados</strong><br><br>
-Ureia (fonte de azoto)<br>
-Fosfato de cálcio (fonte de fósforo)<br>
-Cloreto de potássio (fonte de potássio)
-</div>
-
-</div>
+<p>
+A estrutura incorpora ainda fertilizantes NPK, incluindo ureia como fonte de azoto, fosfato de cálcio como fonte de fósforo e cloreto de potássio como fonte de potássio.
+</p>
 
 </div>
 
@@ -460,18 +444,16 @@ Cloreto de potássio (fonte de potássio)
 
 <h2>Vantagens do EcoRoot™</h2>
 
-<div class="grid">
-
-<div class="feature">✅ Redução de resíduos plásticos no solo</div>
-<div class="feature">✅ Menor stress radicular no transplante</div>
-<div class="feature">✅ Libertação gradual de nutrientes</div>
-<div class="feature">✅ Redução da necessidade de fertilização adicional</div>
-<div class="feature">✅ Menor perda de nutrientes por lixiviação</div>
-<div class="feature">✅ Melhor retenção de humidade</div>
-<div class="feature">✅ Produto plantável (não necessita remoção da cuvete)</div>
-<div class="feature">✅ Produzido a partir de matérias-primas renováveis</div>
-
-</div>
+<ul>
+<li>✅ Redução de resíduos plásticos no solo</li>
+<li>✅ Menor stress radicular no transplante</li>
+<li>✅ Libertação gradual de nutrientes</li>
+<li>✅ Redução da necessidade de fertilização adicional</li>
+<li>✅ Menor perda de nutrientes por lixiviação</li>
+<li>✅ Melhor retenção de humidade</li>
+<li>✅ Produto plantável sem necessidade de remoção da cuvete</li>
+<li>✅ Produzido a partir de matérias-primas renováveis</li>
+</ul>
 
 </div>
 
@@ -480,20 +462,12 @@ Cloreto de potássio (fonte de potássio)
 
 <h2>Instruções de utilização</h2>
 
-<h3>Em viveiro</h3>
-
 <p>
-• Encher a cuvete com substrato adequado<br>
-• Introduzir a semente ou planta jovem<br>
-• Regar normalmente durante o crescimento
+Em viveiro, a cuvete deve ser preenchida com substrato adequado, seguida da introdução da semente ou planta jovem. A rega pode ser realizada normalmente durante todo o período de crescimento.
 </p>
 
-<h3>Na plantação</h3>
-
 <p>
-• Plantar diretamente no solo com a cuvete<br>
-• Garantir contacto adequado com o solo<br>
-• Regar após plantação
+Na fase de plantação, a EcoRoot™ pode ser colocada diretamente no solo, garantindo um contacto adequado com a terra e regando após a instalação.
 </p>
 
 <p>
@@ -503,40 +477,33 @@ A cuvete irá degradar-se progressivamente, permitindo o crescimento radicular s
 </div>
 
 <!-- APLICAÇÕES -->
-<div class="card">
+<div class="card" id="aplicacoes">
 
 <h2>Aplicações</h2>
 
-<div class="grid">
-
-<div class="feature">🌱 Viveiros florestais</div>
-<div class="feature">🌱 Viveiros agrícolas</div>
-<div class="feature">🌱 Reflorestação</div>
-<div class="feature">🌱 Produção hortícola</div>
-<div class="feature">🌱 Jardinagem doméstica</div>
-<div class="feature">🌱 Plantação de árvores ornamentais</div>
-
-</div>
+<ul>
+<li>🌱 Viveiros florestais</li>
+<li>🌱 Viveiros agrícolas</li>
+<li>🌱 Reflorestação</li>
+<li>🌱 Produção hortícola</li>
+<li>🌱 Jardinagem doméstica</li>
+<li>🌱 Plantação de árvores ornamentais</li>
+</ul>
 
 </div>
 
 <!-- SUSTENTABILIDADE -->
-<div class="card">
+<div class="card" id="sustentabilidade">
 
 <h2>Sustentabilidade</h2>
 
 <p>
-O EcoRoot™ foi desenvolvido com foco na economia circular:
+O EcoRoot™ foi desenvolvido com foco na economia circular, promovendo a redução da utilização de plásticos convencionais e a substituição por materiais biodegradáveis e renováveis.
 </p>
 
-<div class="grid">
-
-<div class="feature">♻️ Redução da utilização de plásticos convencionais</div>
-<div class="feature">🌿 Utilização de materiais biodegradáveis e renováveis</div>
-<div class="feature">💧 Redução do número de aplicações de fertilizante</div>
-<div class="feature">🌍 Menor impacto ambiental ao longo do ciclo de vida</div>
-
-</div>
+<p>
+Além disso, a libertação gradual de nutrientes reduz o número de aplicações de fertilizante necessárias, contribuindo para um menor impacto ambiental ao longo do ciclo de vida do produto.
+</p>
 
 </div>
 
@@ -545,43 +512,29 @@ O EcoRoot™ foi desenvolvido com foco na economia circular:
 
 <h2>Informação técnica</h2>
 
-<p><strong>Composição NPK aproximada:</strong> 18–6–18</p>
-
-<p><strong>Tempo estimado de biodegradação:</strong> 1–2 anos (dependendo das condições do solo)</p>
-
-<p><strong>Condições de armazenamento:</strong> ambiente seco e ventilado</p>
-
-<p><strong>Lote:</strong> [Inserir lote]</p>
-
-<p><strong>Data de fabrico:</strong> [Inserir data]</p>
+<ul>
+<li>Composição NPK aproximada: 18–6–18</li>
+<li>Tempo estimado de biodegradação: 1–2 anos</li>
+<li>Condições de armazenamento: ambiente seco e ventilado</li>
+<li>Lote: [Inserir lote]</li>
+<li>Data de fabrico: [Inserir data]</li>
+</ul>
 
 </div>
 
 <!-- FAQ -->
-<div class="card">
+<div class="card" id="faq">
 
 <h2>Perguntas Frequentes</h2>
 
-<div class="faq-item">
-<h3>Posso plantar diretamente com a cuvete?</h3>
-<p>
-Sim. A EcoRoot™ foi desenvolvida para ser plantada diretamente no solo, sem necessidade de remoção.
-</p>
-</div>
+<p><strong>Posso plantar diretamente com a cuvete?</strong><br>
+Sim. A EcoRoot™ foi desenvolvida para ser plantada diretamente no solo, eliminando a necessidade de remover a cuvete.</p>
 
-<div class="faq-item">
-<h3>Quanto tempo demora a degradar?</h3>
-<p>
-O tempo médio de biodegradação varia entre 1 e 2 anos, dependendo das condições do solo e humidade.
-</p>
-</div>
+<p><strong>Quanto tempo demora a degradar?</strong><br>
+O tempo médio de biodegradação varia entre 1 e 2 anos, dependendo das condições do solo e da humidade.</p>
 
-<div class="faq-item">
-<h3>Precisa de fertilização adicional?</h3>
-<p>
-A cuvete já incorpora nutrientes NPK de libertação gradual, reduzindo a necessidade de fertilização complementar nas fases iniciais.
-</p>
-</div>
+<p><strong>Precisa de fertilização extra?</strong><br>
+A cuvete já incorpora fertilizantes NPK de libertação gradual, reduzindo significativamente a necessidade de fertilização complementar nas fases iniciais.</p>
 
 </div>
 
@@ -591,7 +544,7 @@ A cuvete já incorpora nutrientes NPK de libertação gradual, reduzindo a neces
 <h2>Rótulo do Produto</h2>
 
 <p>
-O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
+O rótulo inclui informação técnica, composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
 </p>
 
 <img src="Rotulo.jpg" onclick="openLightbox(this.src)">
@@ -601,7 +554,7 @@ O rótulo inclui informação técnica como composição, instruções de utiliz
 </section>
 
 <footer>
-EcoRoot™ | Universidade de Aveiro – Departamento de Engenharia Química
+EcoRoot™ | Projeto académico – Universidade de Aveiro
 </footer>
 
 <!-- LIGHTBOX -->
@@ -630,7 +583,6 @@ function toggleMenu(){
         menu.style.top = navHeight + "px";
 
         menu.style.maxHeight = "500px";
-
     }
 
 }
@@ -638,7 +590,6 @@ function toggleMenu(){
 function openLightbox(src){
 
     document.getElementById("lightboxImg").src = src;
-
     document.getElementById("lightbox").style.display = "flex";
 
 }
