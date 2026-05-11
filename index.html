@@ -50,7 +50,8 @@ nav{
 
     background:rgba(0,0,0,0.85);
 
-    padding:16px 20px 22px;
+    padding:16px 20px;
+    padding-bottom:22px;
 
     z-index:1000;
 
@@ -69,10 +70,11 @@ nav{
 .nav-left img{
     width:105px;
     height:auto;
+    background:transparent;
     padding:5px;
+    border-radius:6px;
 }
 
-/* MENU */
 .nav-center{
     display:flex;
     gap:22px;
@@ -88,10 +90,10 @@ nav a{
 }
 
 nav a:hover{
-    opacity:0.75;
+    color:#86efac;
 }
 
-/* MENU MOBILE */
+/* BOTÃO MENU */
 .menu-btn{
     display:none;
     position:absolute;
@@ -128,6 +130,7 @@ nav a:hover{
     top:9px;
 }
 
+/* MENU MOBILE */
 .mobile-menu{
     position:fixed;
     left:0;
@@ -151,21 +154,8 @@ nav a:hover{
     color:white;
     padding:16px;
     text-decoration:none;
+    font-size:15px;
     border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-/* HERO TEXT */
-.hero h1{
-    font-size:72px;
-    margin:0;
-    font-weight:700;
-}
-
-.hero p{
-    font-size:22px;
-    margin-top:10px;
-    font-weight:300;
-    opacity:0.95;
 }
 
 /* CONTAINER */
@@ -178,9 +168,13 @@ nav a:hover{
 .card{
     max-width:1000px;
     margin:20px auto;
+
     background:white;
+
     padding:40px;
+
     border-radius:18px;
+
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
@@ -198,19 +192,19 @@ p{
 /* LISTAS */
 .info-list{
     padding-left:35px;
-    margin-top:15px;
 }
 
 .info-list li{
-    margin-bottom:12px;
     font-size:17px;
+    margin-bottom:12px;
 }
 
 .info-list li::marker{
     font-size:18px;
+    color:#166534;
 }
 
-/* IMAGEM */
+/* IMG */
 img{
     width:100%;
     border-radius:14px;
@@ -249,9 +243,25 @@ img{
 /* FOOTER */
 footer{
     text-align:center;
-    padding:25px;
+    padding:30px 20px;
     background:#111827;
     color:white;
+    font-size:15px;
+    line-height:1.8;
+}
+
+/* HERO TEXT */
+.hero h1{
+    font-size:72px;
+    margin:0;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:22px;
+    margin-top:10px;
+    font-weight:300;
+    opacity:0.95;
 }
 
 /* MOBILE */
@@ -263,6 +273,7 @@ footer{
         url('Fundo-mobile.jpg');
 
         height:90vh;
+        padding:20px;
     }
 
     .hero h1{
@@ -271,7 +282,6 @@ footer{
 
     .hero p{
         font-size:16px;
-        padding:0 10px;
     }
 
     nav{
@@ -285,6 +295,7 @@ footer{
 
     .nav-left img{
         width:95px;
+        padding:4px;
         margin-top:6px;
     }
 
@@ -305,7 +316,10 @@ footer{
         font-size:24px;
     }
 
-    p,
+    p{
+        font-size:15px;
+    }
+
     .info-list li{
         font-size:15px;
     }
@@ -317,7 +331,6 @@ footer{
 
 <body>
 
-<!-- NAV -->
 <nav>
 
     <div class="nav-left">
@@ -329,9 +342,7 @@ footer{
         <a href="#funcionamento">Funcionamento</a>
         <a href="#composicao">Composição</a>
         <a href="#vantagens">Vantagens</a>
-        <a href="#utilizacao">Utilização</a>
         <a href="#aplicacoes">Aplicações</a>
-        <a href="#sustentabilidade">Sustentabilidade</a>
         <a href="#faq">FAQ</a>
         <a href="#rotulo">Rótulo</a>
     </div>
@@ -346,32 +357,24 @@ footer{
 
 <!-- MENU MOBILE -->
 <div class="mobile-menu" id="mobileMenu">
-
     <a href="#produto" onclick="toggleMenu()">Produto</a>
     <a href="#funcionamento" onclick="toggleMenu()">Funcionamento</a>
     <a href="#composicao" onclick="toggleMenu()">Composição</a>
     <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
-    <a href="#utilizacao" onclick="toggleMenu()">Utilização</a>
     <a href="#aplicacoes" onclick="toggleMenu()">Aplicações</a>
-    <a href="#sustentabilidade" onclick="toggleMenu()">Sustentabilidade</a>
     <a href="#faq" onclick="toggleMenu()">FAQ</a>
     <a href="#rotulo" onclick="toggleMenu()">Rótulo</a>
-
 </div>
 
 <!-- HERO -->
 <section class="hero">
-
     <div>
-
         <h1>EcoRoot™</h1>
 
         <p>
             A cuvete biodegradável que nutre e protege o crescimento da sua planta
         </p>
-
     </div>
-
 </section>
 
 <section class="container">
@@ -379,18 +382,14 @@ footer{
 <!-- PRODUTO -->
 <div class="card" id="produto">
 
-<h2>O Produto</h2>
+<h2>🌱 O Produto</h2>
 
 <p>
-O EcoRoot™ é uma cuvete biodegradável desenvolvida para apoiar o crescimento inicial de plantas, combinando suporte físico, retenção de humidade e libertação controlada de nutrientes num único produto.
+O EcoRoot™ é uma cuvete biodegradável desenvolvida para apoiar o crescimento inicial de plantas, combinando suporte estrutural, retenção de humidade e libertação gradual de nutrientes num único sistema.
 </p>
 
 <p>
-Produzida a partir de materiais de origem renovável, como amido termoplástico e fibras de celulose, a cuvete degrada-se progressivamente no solo após a plantação, reduzindo resíduos plásticos e simplificando o processo produtivo.
-</p>
-
-<p>
-A incorporação de fertilizantes NPK diretamente na estrutura permite fornecer nutrientes de forma gradual durante as fases iniciais de desenvolvimento da planta, promovendo um melhor estabelecimento radicular.
+Produzida a partir de materiais renováveis, como amido termoplástico e fibras de celulose, a cuvete degrada-se progressivamente no solo após a plantação, reduzindo resíduos plásticos e simplificando o processo de transplante.
 </p>
 
 </div>
@@ -398,14 +397,14 @@ A incorporação de fertilizantes NPK diretamente na estrutura permite fornecer 
 <!-- FUNCIONAMENTO -->
 <div class="card" id="funcionamento">
 
-<h2>Como Funciona</h2>
+<h2>💧 Como Funciona</h2>
 
 <p>
-A tecnologia EcoRoot™ baseia-se na absorção gradual de água pela estrutura porosa da cuvete, permitindo a dissolução progressiva dos nutrientes incorporados e a sua libertação controlada no solo.
+A estrutura porosa do EcoRoot™ permite a absorção gradual de água, promovendo a dissolução progressiva dos nutrientes incorporados.
 </p>
 
 <p>
-Este sistema acompanha as necessidades da planta durante o crescimento inicial, reduzindo perdas por lixiviação e aumentando a eficiência da fertilização.
+Os nutrientes são libertados de forma controlada conforme as necessidades da planta, reduzindo perdas por lixiviação e aumentando a eficiência da fertilização durante o desenvolvimento inicial.
 </p>
 
 </div>
@@ -413,50 +412,24 @@ Este sistema acompanha as necessidades da planta durante o crescimento inicial, 
 <!-- COMPOSIÇÃO -->
 <div class="card" id="composicao">
 
-<h2>Composição e Informação Técnica</h2>
+<h2>🧪 Composição e Informação Técnica</h2>
 
 <p>
 O EcoRoot™ é desenvolvido com materiais biodegradáveis e nutrientes essenciais, garantindo um equilíbrio entre crescimento vegetativo, desenvolvimento radicular e resistência da planta. Os componentes nele incluídos são:
 </p>
 
 <ul class="info-list">
+    <li>Amido termoplástico (TPS)</li>
 
-    <li>
-        Amido termoplástico (TPS) — matriz biodegradável principal
-    </li>
+    <li>Fibras de celulose</li>
 
-    <li>
-        Fibras de celulose — reforço estrutural
-    </li>
+    <li>Glicerol</li>
 
-    <li>
-        Glicerol — plastificante
-    </li>
+    <li>Fertilizantes NPK (18–6–18)</li>
 
-    <li>
-        Fertilizantes NPK incorporados (18–6–18)
-    </li>
+    <li>Biodegradação estimada de 1–2 anos (dependente do solo)</li>
 
-    <li>
-        Ureia — fonte de azoto
-    </li>
-
-    <li>
-        Fosfato de cálcio — fonte de fósforo
-    </li>
-
-    <li>
-        Cloreto de potássio — fonte de potássio
-    </li>
-
-    <li>
-        Biodegradação estimada entre 1 e 2 anos, dependendo das condições do solo
-    </li>
-
-    <li>
-        Armazenamento recomendado em local seco e ventilado
-    </li>
-
+    <li>Armazenamento em local seco e ventilado</li>
 </ul>
 
 </div>
@@ -464,10 +437,10 @@ O EcoRoot™ é desenvolvido com materiais biodegradáveis e nutrientes essencia
 <!-- VANTAGENS -->
 <div class="card" id="vantagens">
 
-<h2>Vantagens</h2>
+<h2>✅ Vantagens</h2>
 
 <p>
-O EcoRoot™ apresenta benefícios ambientais e agronómicos relevantes:
+O sistema EcoRoot™ apresenta vantagens ambientais e agronómicas relevantes:
 </p>
 
 <ul class="info-list">
@@ -476,68 +449,25 @@ O EcoRoot™ apresenta benefícios ambientais e agronómicos relevantes:
 
     <li>Menor stress radicular durante o transplante</li>
 
-    <li>Libertação gradual de nutrientes</li>
-
-    <li>Redução da necessidade de fertilização adicional</li>
-
-    <li>Menor perda de nutrientes por lixiviação</li>
+    <li>Libertação gradual e eficiente de nutrientes</li>
 
     <li>Melhor retenção de humidade</li>
 
-    <li>Produto plantável sem necessidade de remover a cuvete</li>
+    <li>Redução da necessidade de fertilização adicional</li>
 
-    <li>Produzido a partir de matérias-primas renováveis</li>
-
-</ul>
-
-</div>
-
-<!-- UTILIZAÇÃO -->
-<div class="card" id="utilizacao">
-
-<h2>Instruções de Utilização</h2>
-
-<p>
-O EcoRoot™ foi desenvolvido para simplificar o processo de produção e plantação.
-</p>
-
-<ul class="info-list">
-
-    <li>
-        Encher a cuvete com substrato adequado
-    </li>
-
-    <li>
-        Introduzir a semente ou planta jovem
-    </li>
-
-    <li>
-        Regar normalmente durante o crescimento
-    </li>
-
-    <li>
-        Plantar diretamente no solo com a cuvete
-    </li>
-
-    <li>
-        Garantir contacto adequado com o solo após a plantação
-    </li>
+    <li>Produto plantável sem necessidade de remoção</li>
 
 </ul>
-
-<p>
-A cuvete degrada-se progressivamente, permitindo o crescimento radicular sem necessidade de remoção.
-</p>
 
 </div>
 
 <!-- APLICAÇÕES -->
 <div class="card" id="aplicacoes">
 
-<h2>Aplicações</h2>
+<h2>🌿 Aplicações</h2>
 
 <p>
-O EcoRoot™ pode ser aplicado em diferentes contextos agrícolas e florestais:
+O EcoRoot™ pode ser utilizado em diferentes contextos agrícolas e florestais:
 </p>
 
 <ul class="info-list">
@@ -558,41 +488,10 @@ O EcoRoot™ pode ser aplicado em diferentes contextos agrícolas e florestais:
 
 </div>
 
-<!-- SUSTENTABILIDADE -->
-<div class="card" id="sustentabilidade">
-
-<h2>Sustentabilidade</h2>
-
-<p>
-O EcoRoot™ foi desenvolvido com foco na economia circular e na redução do impacto ambiental associado aos recipientes plásticos convencionais.
-</p>
-
-<ul class="info-list">
-
-    <li>
-        Utilização de materiais biodegradáveis e renováveis
-    </li>
-
-    <li>
-        Redução da utilização de plástico convencional
-    </li>
-
-    <li>
-        Redução do número de aplicações de fertilizante
-    </li>
-
-    <li>
-        Menor impacto ambiental ao longo do ciclo de vida
-    </li>
-
-</ul>
-
-</div>
-
 <!-- FAQ -->
 <div class="card" id="faq">
 
-<h2>Perguntas Frequentes</h2>
+<h2>❓ Perguntas Frequentes</h2>
 
 <p>
 <strong>Posso plantar diretamente com a cuvete?</strong><br>
@@ -601,11 +500,11 @@ Sim. O EcoRoot™ foi concebido para ser plantado diretamente no solo.
 
 <p>
 <strong>Quanto tempo demora a degradar?</strong><br>
-A biodegradação ocorre gradualmente entre 1 e 2 anos, dependendo das condições do solo.
+A biodegradação ocorre gradualmente ao longo de 1 a 2 anos, dependendo das condições do solo.
 </p>
 
 <p>
-<strong>Precisa de fertilização extra?</strong><br>
+<strong>É necessária fertilização extra?</strong><br>
 A cuvete já incorpora nutrientes NPK para apoiar as fases iniciais de crescimento da planta.
 </p>
 
@@ -614,7 +513,7 @@ A cuvete já incorpora nutrientes NPK para apoiar as fases iniciais de crescimen
 <!-- RÓTULO -->
 <div class="card" id="rotulo">
 
-<h2>Rótulo do Produto</h2>
+<h2>📄 Rótulo do Produto</h2>
 
 <p>
 O rótulo apresenta informação técnica, composição e instruções de utilização do EcoRoot™.
@@ -626,9 +525,16 @@ O rótulo apresenta informação técnica, composição e instruções de utiliz
 
 </section>
 
-<!-- FOOTER -->
 <footer>
-EcoRoot™ | Projeto académico – Universidade de Aveiro | Departamento de Engenharia Química
+
+EcoRoot™ | Projeto académico<br>
+
+📩 Email: inserir@email.com<br>
+
+🌍 Website: www.ecoroot.pt<br>
+
+📍 Universidade de Aveiro – Departamento de Engenharia Química
+
 </footer>
 
 <!-- LIGHTBOX -->
