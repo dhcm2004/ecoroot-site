@@ -140,7 +140,7 @@ nav a:hover{
 
 .mobile-menu a{
     color:white;
-    padding:14px;
+    padding:16px;
     text-decoration:none;
     font-size:15px;
     border-bottom:1px solid rgba(255,255,255,0.08);
@@ -173,7 +173,7 @@ p{
     margin-bottom:18px;
 }
 
-/* LIST */
+/* LISTAS */
 .info-list{
     padding-left:35px;
 }
@@ -244,7 +244,7 @@ footer{
 }
 
 /* ===================== */
-/* 📱 MOBILE MELHORADO */
+/* 📱 MOBILE (MELHORADO) */
 /* ===================== */
 
 @media(max-width:768px){
@@ -259,13 +259,14 @@ footer{
     }
 
     .hero h1{
-        font-size:34px;
+        font-size:38px;
         line-height:1.2;
+        letter-spacing:0.5px;
     }
 
     .hero p{
-        font-size:15px;
-        max-width:90%;
+        font-size:16px;
+        max-width:92%;
         margin:10px auto 0;
     }
 
@@ -287,6 +288,10 @@ footer{
         right:20px;
     }
 
+    .container{
+        padding:40px 14px;
+    }
+
     .card{
         padding:22px;
         margin:14px 10px;
@@ -299,16 +304,13 @@ footer{
     }
 
     p{
-        font-size:15px;
-        line-height:1.6;
+        font-size:15.5px;
+        line-height:1.65;
     }
 
     .info-list li{
-        font-size:15px;
-    }
-
-    .container{
-        padding:40px 14px;
+        font-size:15.5px;
+        line-height:1.6;
     }
 }
 
@@ -342,6 +344,7 @@ footer{
 
 </nav>
 
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="#produto" onclick="toggleMenu()">Produto</a>
     <a href="#funcionamento" onclick="toggleMenu()">Funcionamento</a>
@@ -353,6 +356,7 @@ footer{
     <a href="#rotulo" onclick="toggleMenu()">Rótulo</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
     <div>
         <h1>EcoRoot™</h1>
@@ -363,43 +367,137 @@ footer{
 <section class="container">
 
 <div class="card" id="produto">
+
 <h2>🌱 O Produto</h2>
-<p>O EcoRoot™ é uma cuvete biodegradável desenvolvida para promover o crescimento inicial das plantas...</p>
+
+<p>
+O EcoRoot™ é uma cuvete biodegradável desenvolvida para promover o crescimento inicial das plantas, combinando suporte estrutural, retenção de humidade e libertação controlada de nutrientes num único sistema.
+</p>
+
+<p>
+Produzida a partir de materiais renováveis, como amido termoplástico e fibras de celulose, a cuvete degrada-se progressivamente no solo após a plantação, reduzindo resíduos plásticos e simplificando o processo de transplante.
+</p>
+
+<p>
+A incorporação de fertilizantes NPK diretamente na sua estrutura permite a libertação gradual de nutrientes ao longo das fases iniciais de desenvolvimento da planta, favorecendo o crescimento radicular e aumentando a eficiência nutricional.
+</p>
+
 </div>
 
 <div class="card" id="funcionamento">
+
 <h2>⚙️ Como Funciona</h2>
-<p>A estrutura porosa permite absorção gradual de água...</p>
+
+<p>
+A estrutura porosa do EcoRoot™ permite a absorção gradual de água, promovendo a dissolução progressiva dos nutrientes incorporados.
+</p>
+
+<p>
+Os nutrientes são libertados de forma controlada conforme as necessidades da planta, reduzindo perdas por lixiviação e aumentando a eficiência da fertilização.
+</p>
+
 </div>
 
 <div class="card" id="composicao">
+
 <h2>🧪 Composição</h2>
-<p>O EcoRoot™ é desenvolvido com materiais biodegradáveis...</p>
+
+<ul class="info-list">
+
+<li>55% Amido — matriz principal</li>
+<li>20% Fibras de celulose — reforço estrutural</li>
+
+<li>
+15% Fertilizantes NPK
+<ul>
+<li>40% Ureia — fonte de azoto (N)</li>
+<li>30% Fosfato de cálcio — fonte de fósforo (P)</li>
+<li>30% Cloreto de potássio — fonte de potássio (K)</li>
+</ul>
+</li>
+
+<li>9% Glicerol — plastificante</li>
+<li>1% Estearato de magnésio — desmoldante</li>
+
+</ul>
+
 </div>
 
 <div class="card" id="ficha">
-<h2>📋 Informações técnicas</h2>
-<p>Biodegradação entre 1 e 2 anos...</p>
+
+<h2>📋 Informações técnicas e de utilização</h2>
+
+<p>
+Informações técnicas e condições recomendadas de utilização do EcoRoot™.
+</p>
+
+<ul class="info-list">
+<li>Biodegradação estimada entre 1 e 2 anos</li>
+<li>Armazenamento recomendado em local seco e ventilado</li>
+</ul>
+
+<p>
+Instruções de utilização:
+</p>
+
+<ul class="info-list">
+<li><strong>Em viveiro:</strong> Encher a cuvete com substrato adequado...</li>
+<li><strong>Na plantação:</strong> Plantar diretamente no solo...</li>
+</ul>
+
 </div>
 
 <div class="card" id="vantagens">
+
 <h2>✅ Vantagens</h2>
-<p>Redução de resíduos plásticos...</p>
+
+<ul class="info-list">
+<li>Redução de resíduos plásticos no solo</li>
+<li>Menor stress radicular durante o transplante</li>
+<li>Libertação gradual e eficiente de nutrientes</li>
+<li>Melhor retenção de humidade</li>
+<li>Redução da necessidade de fertilização adicional</li>
+<li>Produto plantável sem necessidade de remoção</li>
+</ul>
+
 </div>
 
 <div class="card" id="aplicacoes">
+
 <h2>🌿 Aplicações</h2>
-<p>Viveiros, reflorestação...</p>
+
+<ul class="info-list">
+<li>Viveiros florestais</li>
+<li>Viveiros agrícolas</li>
+<li>Reflorestação</li>
+<li>Produção hortícola</li>
+<li>Jardinagem doméstica</li>
+<li>Plantação de árvores ornamentais</li>
+</ul>
+
 </div>
 
 <div class="card" id="faq">
-<h2>❓ FAQ</h2>
-<p>Sim, pode plantar diretamente...</p>
+
+<h2>❓ Perguntas Frequentes</h2>
+
+<p><strong>Posso plantar diretamente com a cuvete?</strong><br>
+Sim. O EcoRoot™ foi concebido para ser plantado diretamente no solo.</p>
+
+<p><strong>Quanto tempo demora a degradar?</strong><br>
+Entre 1 e 2 anos, dependendo do solo.</p>
+
+<p><strong>É necessária fertilização extra?</strong><br>
+Não necessariamente, já contém NPK.</p>
+
 </div>
 
 <div class="card" id="rotulo">
-<h2>📄 Rótulo</h2>
+
+<h2>📄 Rótulo do Produto</h2>
+
 <img src="Rotulo.jpg" onclick="openLightbox(this.src)">
+
 </div>
 
 </section>
