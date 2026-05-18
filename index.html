@@ -559,94 +559,138 @@ Universidade de Aveiro - Departamento de Engenharia Química
 
 let currentLanguage = "pt";
 
-function setText(id, text){
-    const el = document.getElementById(id);
-    if(el) el.innerHTML = text;
-}
-
 function toggleLanguage(){
 
     if(currentLanguage === "pt"){
 
         currentLanguage = "en";
+
         document.documentElement.lang = "en";
-        setText("langBtn","PT");
+        document.getElementById("langBtn").innerHTML = "PT";
 
         // NAV
-        setText("navProduto","Product");
-        setText("navFunc","How It Works");
-        setText("navComp","Composition");
-        setText("navInfo","Information");
-        setText("navVant","Advantages");
-        setText("navApli","Applications");
-        setText("navPerg","FAQ");
+        document.getElementById("navProduto").innerHTML = "Product";
+        document.getElementById("navFunc").innerHTML = "How It Works";
+        document.getElementById("navComp").innerHTML = "Composition";
+        document.getElementById("navInfo").innerHTML = "Information";
+        document.getElementById("navVant").innerHTML = "Advantages";
+        document.getElementById("navApli").innerHTML = "Applications";
+        document.getElementById("navPerg").innerHTML = "FAQ";
 
         // MOBILE
-        setText("mProduto","Product");
-        setText("mFunc","How It Works");
-        setText("mComp","Composition");
-        setText("mInfo","Information");
-        setText("mVant","Advantages");
-        setText("mApli","Applications");
-        setText("mPerg","FAQ");
+        document.getElementById("mProduto").innerHTML = "Product";
+        document.getElementById("mFunc").innerHTML = "How It Works";
+        document.getElementById("mComp").innerHTML = "Composition";
+        document.getElementById("mInfo").innerHTML = "Information";
+        document.getElementById("mVant").innerHTML = "Advantages";
+        document.getElementById("mApli").innerHTML = "Applications";
+        document.getElementById("mPerg").innerHTML = "FAQ";
 
         // HERO
-        setText("heroText","The biodegradable tray that nourishes and protects plant growth");
-
-        // TITLES
-        setText("tituloProduto","🌱 The Product");
-        setText("tituloFunc","⚙️ How It Works");
-        setText("tituloComp","🧪 Composition");
-        setText("tituloInfo","📋 Technical information and usage");
-        setText("tituloVant","✅ Advantages");
-        setText("tituloApli","🌿 Applications");
-        setText("tituloPerg","❓ Frequently Asked Questions");
+        document.getElementById("heroText").innerHTML =
+        "The biodegradable tray that nourishes and protects plant growth";
 
         // PRODUCT
-        setText("produto1","EcoRoot™ is a biodegradable tray designed to support plant growth.");
-        setText("produto2","Made from renewable materials, it degrades in soil.");
-        setText("produto3","NPK fertilizers allow gradual nutrient release.");
+        document.getElementById("tituloProduto").innerHTML = "🌱 The Product";
+
+        document.getElementById("produto1").innerHTML =
+        "EcoRoot™ is a biodegradable tray designed to support the initial growth of plants, combining structural support, moisture retention, and controlled nutrient release in a single system.";
+
+        document.getElementById("produto2").innerHTML =
+        "Made from renewable materials such as thermoplastic starch and cellulose fibers, the tray gradually degrades in the soil after planting.";
+
+        document.getElementById("produto3").innerHTML =
+        "The incorporation of NPK fertilizers allows gradual nutrient release during early plant development.";
 
         // HOW IT WORKS
-        setText("func1","Porous structure allows water absorption.");
-        setText("func2","Nutrients are released according to plant needs.");
+        document.getElementById("tituloFunc").innerHTML = "⚙️ How It Works";
+
+        document.getElementById("func1").innerHTML =
+        "The porous structure allows gradual water absorption.";
+
+        document.getElementById("func2").innerHTML =
+        "Nutrients are released according to plant needs.";
 
         // COMPOSITION
-        setText("compText","EcoRoot™ is made with biodegradable materials.");
-        setText("c1","55% Starch — main matrix");
-        setText("c2","20% Cellulose fibers");
-        setText("c3","15% NPK fertilizers");
-        setText("c4","9% Glycerol");
-        setText("c5","1% Magnesium stearate");
+        document.getElementById("tituloComp").innerHTML = "🧪 Composition";
+
+        document.getElementById("compText").innerHTML =
+        "EcoRoot™ is made with biodegradable materials and essential nutrients.";
+
+        document.getElementById("c1").innerHTML = "55% Starch — main matrix";
+        document.getElementById("c2").innerHTML = "20% Cellulose fibers — structural reinforcement";
+        document.getElementById("c3").innerHTML = "15% NPK fertilizers";
+        document.getElementById("c4").innerHTML = "9% Glycerol — plasticizer";
+        document.getElementById("c5").innerHTML = "1% Magnesium stearate — release agent";
 
         // INFO
-        setText("info1","Technical information and storage conditions.");
-        setText("i1","Biodegradation: 1–2 years");
-        setText("i2","Store in a dry place");
-        setText("info2","Instructions for use.");
-        setText("i3","Nursery: fill tray and plant.");
-        setText("i4","Planting: place directly in soil.");
+        document.getElementById("tituloInfo").innerHTML =
+        "📋 Technical information and usage";
+
+        document.getElementById("info1").innerHTML =
+        "Technical information and storage conditions.";
+
+        document.getElementById("i1").innerHTML =
+        "Estimated biodegradation: 1–2 years";
+
+        document.getElementById("i2").innerHTML =
+        "Store in a dry and ventilated place";
+
+        document.getElementById("info2").innerHTML =
+        "Instructions for use.";
+
+        document.getElementById("i3").innerHTML =
+        "<strong>Nursery:</strong> Fill tray, plant seed, and water normally.";
+
+        document.getElementById("i4").innerHTML =
+        "<strong>Planting:</strong> Plant directly in soil with the tray.";
 
         // ADVANTAGES
-        setText("v1","Reduction of plastic waste");
-        setText("v2","Less root stress");
-        setText("v3","Gradual nutrient release");
+        document.getElementById("tituloVant").innerHTML = "✅ Advantages";
+
+        document.getElementById("v1").innerHTML = "Reduction of plastic waste";
+        document.getElementById("v2").innerHTML = "Less root stress";
+        document.getElementById("v3").innerHTML = "Gradual nutrient release";
 
         // APPLICATIONS
-        setText("a1","Forest nurseries");
-        setText("a2","Agricultural nurseries");
-        setText("a3","Reforestation");
+        document.getElementById("tituloApli").innerHTML = "🌿 Applications";
+
+        document.getElementById("a1").innerHTML = "Forest nurseries";
+        document.getElementById("a2").innerHTML = "Agricultural nurseries";
+        document.getElementById("a3").innerHTML = "Reforestation";
 
         // FAQ
-        setText("faq1","Can I plant directly with the tray? Yes.");
-        setText("faq2","Degrades in 1–2 years.");
+        document.getElementById("tituloPerg").innerHTML =
+        "❓ Frequently Asked Questions";
+
+        document.getElementById("faq1").innerHTML =
+        "<strong>Can I plant directly with the tray?</strong><br>Yes.";
+
+        document.getElementById("faq2").innerHTML =
+        "<strong>How long does it take to degrade?</strong><br>1–2 years.";
 
         // FOOTER
-        setText("footerText","EcoRoot™ | Academic project | University of Aveiro");
+        document.getElementById("footerText").innerHTML =
+        "📩 Email: info@ecosolutions.com<br>EcoRoot™ | Academic project<br>University of Aveiro";
 
     } else {
+
         currentLanguage = "pt";
         location.reload();
+    }
+}
+
+function toggleMenu(){
+
+    const menu = document.getElementById("mobileMenu");
+    const btn = document.getElementById("menuBtn");
+
+    btn.classList.toggle("active");
+
+    if(menu.style.maxHeight && menu.style.maxHeight !== "0px"){
+        menu.style.maxHeight = "0px";
+    } else {
+        menu.style.maxHeight = "500px";
     }
 }
 
